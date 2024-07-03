@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "swiper/css";
+import TanstackProvider from "../../providers/TanstackProvider";
+import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className=" bg-slate-900 px-5 ">
+        <Header />
+        <TanstackProvider>{children}</TanstackProvider>
+      </body>
     </html>
   );
 }
